@@ -2,7 +2,7 @@
   <div id="hero" class="hero-section">
     <div class="flex flex-col items-center justify-center gap-8">
       <div class="flex flex-col items-center justify-center">
-        <h1 class="text-header-3xl text-gradient leading-10 text-center">Infrastructure as Code</h1>
+        <h1 class="text-header-3xl text-gradient text-center">Infrastructure as Code</h1>
       </div>
       <p class="text-header-m text-center">
         Launch your compliant, safe and secured app in seconds
