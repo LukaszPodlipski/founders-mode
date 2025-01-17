@@ -22,5 +22,9 @@
   padding: 240px 36px;
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 41%, rgba(222, 233, 252, 1) 100%);
+
+  @media screen and (max-width: 460px) {
+    padding: 160px 24px;
+  }
 }
 </style>
