@@ -86,4 +86,10 @@ onClickOutside(navbar, (event) => (isNavbarOpen.value = false))
     background: var(--vt-c-white);
   }
 }
+
+.github-button {
+  height: 28px;
+  max-height: 28px;
+  line-height: 28px;
+}
 </style>
