@@ -14,14 +14,11 @@ const isHovered = useElementHover(hoveralbeButton)
         <img src="@/assets/images/momentum-logo.svg" class="max-w-[200px]" />
         <span class="text-caption-l">Built by Momentum’s Healthcare experts: </span>
         <span class="text-left text-caption-m text-grey-dark"
-          >At Momentum, we believe in elevating humanity through technology. Our work supports
-          longevity and continuous life quality improvement by developing the most ingenious,
-          cutting-edge solutions in healthcare. We're passionate about creating a world where no one
-          feels helpless because of lack of access to medical information or diagnostics.</span
-        >
-        <span class="text-left text-caption-m text-grey-dark"
-          >We combine deep healthcare expertise with technical excellence to deliver solutions that
-          are secure, scalable, and compliant with industry standards like HIPAA, FHIR and GDPR.
+          >At Momentum, we aim to modernize care delivery with exceptional software. We believe that
+          an open, connected healthcare application ecosystem will drive higher quality care and
+          lower costs both for healthcare providers, clinics and patients. To help make this happen,
+          we provide a comprehensive set of tools and modules that helps to build healthcare
+          applications in days instead of months.
         </span>
         <a
           ref="hoveralbeButton"
@@ -34,20 +31,6 @@ const isHovered = useElementHover(hoveralbeButton)
         </a>
       </div>
       <div class="flex gap-4 column justify-center flex-wrap">
-        <div class="linkedin-card">
-          <img
-            class="linkedin-card__avatar"
-            src="@/assets/images/linkedin/piotr-sedzik.jpg"
-            alt=""
-          />
-          <span class="text-header-xs--bold text-grey-dark">Piotr Sędzik</span>
-          <span>CEO</span>
-          <a href="https://www.linkedin.com/in/piotr-s%C4%99dzik-ba000b109/" target="_blank">
-            <button>
-              <i class="pi pi-linkedin text-xl text-grey linkedin-hover"></i>
-            </button>
-          </a>
-        </div>
         <div class="linkedin-card">
           <img
             class="linkedin-card__avatar"
@@ -70,9 +53,23 @@ const isHovered = useElementHover(hoveralbeButton)
           />
           <span class="text-header-xs--bold text-grey-dark">Jan Kamiński</span>
           <span>CSO</span>
-          <a href="https://www.linkedin.com/in/piotr-s%C4%99dzik-ba000b109/" target="_blank">
+          <a href="https://www.linkedin.com/in/-jan-kaminski/" target="_blank">
             <button>
               <i class="pi pi-linkedin text-lg text-xl text-grey linkedin-hover"></i>
+            </button>
+          </a>
+        </div>
+        <div class="linkedin-card">
+          <img
+            class="linkedin-card__avatar"
+            src="@/assets/images/linkedin/jakub-czaplicki.jpg"
+            alt=""
+          />
+          <span class="text-header-xs--bold text-grey-dark">Jakub Czaplicku</span>
+          <span>Lead Devops</span>
+          <a href="https://www.linkedin.com/in/jakub-czaplicki-419823339/" target="_blank">
+            <button>
+              <i class="pi pi-linkedin text-xl text-grey linkedin-hover"></i>
             </button>
           </a>
         </div>

@@ -5,7 +5,7 @@
         <h1 class="text-header-3xl text-gradient text-center">Infrastructure as Code</h1>
       </div>
       <p class="text-header-m text-center">
-        Launch your compliant, safe and secured app in seconds
+        Launch your compliant, safe and secured app in seconds.
       </p>
       <a target="_blank" href="https://github.com/the-momentum/healthstack">
         <button class="app-button text-header-xs--bold">

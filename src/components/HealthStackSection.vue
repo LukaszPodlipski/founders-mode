@@ -5,7 +5,7 @@
         <h2 class="text-header-2xl leading-10 text-left">What is HeathStack?</h2>
         <p class="text-header-m text-left">
           While it’s easy to manually provision a single server, as your application and business
-          scale, it requires a lot of repetitive work that can be reduced
+          scale, it requires a lot of repetitive work that can be reduced.
         </p>
         <p class="text-header-m--bold-strong text-left">
           Healthstack was created to make infrastructure provisioning efficient, tested, and
