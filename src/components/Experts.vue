@@ -65,7 +65,7 @@ const isHovered = useElementHover(hoveralbeButton)
             src="@/assets/images/linkedin/jakub-czaplicki.jpg"
             alt=""
           />
-          <span class="text-header-xs--bold text-grey-dark">Jakub Czaplicku</span>
+          <span class="text-header-xs--bold text-grey-dark">Jakub Czaplicki</span>
           <span>Lead Devops</span>
           <a href="https://www.linkedin.com/in/jakub-czaplicki-419823339/" target="_blank">
             <button>
