@@ -31,12 +31,16 @@ onClickOutside(navbar, (event) => (isNavbarOpen.value = false))
       <img class="navbar__logo" src="@/assets/images/logo.png" alt="" />
       <div v-if="!isMobile" class="flex gap-4">
         <button class="text-header-xs" @click="scrollToSection('howItWorks')">Product</button>
-        <a target="_blank" href="https://github.com/the-momentum/healthstack">
+        <a
+          class="flex items-center"
+          target="_blank"
+          href="https://github.com/the-momentum/healthstack"
+        >
           <button class="text-header-xs">GitHub</button>
         </a>
         <button class="text-header-xs" @click="scrollToSection('contact')">Contact</button>
         <a
-          class="github-button"
+          class="github-button flex items-center"
           href="https://github.com/the-momentum/healthstack"
           data-color-scheme="no-preference: dark; light: dark; dark: dark;"
           data-icon="octicon-star"
