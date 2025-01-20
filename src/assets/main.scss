@@ -23,7 +23,8 @@ span,
 button,
 input,
 textarea,
-label {
+label,
+small {
   font-family: 'Inter', serif;
 }
 
@@ -31,6 +32,11 @@ label {
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
+
+  &--extedned {
+    @extend .view-wrapper;
+    max-width: 1200px;
+  }
 }
 
 .center {

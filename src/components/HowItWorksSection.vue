@@ -3,8 +3,8 @@
     <div class="flex flex-col items-center justify-center gap-16">
       <h1 class="text-header-xl leading-10">How It Works</h1>
 
-      <div class="card view-wrapper items-center flex-wrap">
-        <div class="flex flex-col gap-4 column">
+      <div class="card view-wrapper--extedned items-center flex-wrap">
+        <div class="flex flex-col gap-12 column">
           <span class="text-header-m--bold"
             >On a quick setup video you can see why it reduces tedious ClickOps tasks, scales well,
             and is repeatable.
@@ -56,7 +56,7 @@
   &__video-container {
     background-color: var(--vt-c-white);
     border-radius: 12px;
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     overflow: hidden;
   }

@@ -57,7 +57,7 @@ onClickOutside(navbar, (event) => (isNavbarOpen.value = false))
   top: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
-  background: rgba(255, 255, 255, 0.776);
+  background: rgba(255, 255, 255, 0.531);
   border-radius: 16px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);

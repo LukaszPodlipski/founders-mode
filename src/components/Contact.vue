@@ -1,8 +1,36 @@
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useForm, configure } from 'vee-validate'
+import * as yup from 'yup'
 
-const email = ref('')
-const message = ref('')
+configure({
+  validateOnBlur: true,
+})
+
+const { errors, handleSubmit, defineField, resetForm } = useForm({
+  validationSchema: yup.object({
+    email: yup.string().email('Please enter a valid email address.').required('Email is required.'),
+    message: yup
+      .string()
+      .max(1000, 'Message cannot exceed 1000 characters.')
+      .required('Message is required.'),
+  }),
+  validateOnBlur: true,
+})
+
+const [email, emailAttrs] = defineField('email')
+const [message, messageAttrs] = defineField('message')
+
+const isValid = computed(() => {
+  return Object.keys(errors.value).length === 0
+})
+
+const sendMessage = handleSubmit((values) => {
+  alert('Not implemented yet')
+  email.value = ''
+  message.value = ''
+  resetForm()
+})
 </script>
 
 <template>
@@ -14,27 +42,40 @@ const message = ref('')
       </p>
     </div>
     <div class="view-wrapper flex flex-col items-center">
-      <form class="flex gap-4 flex-col items-center w-full max-w-[500px]" action="">
-        <label for="email" class="w-full">Email</label>
-        <input
-          id="email"
-          name="email"
-          class="input"
-          type="text"
-          v-model="email"
-          placeholder="Your email here"
-        />
-        <label for="message" class="w-full mt-6">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          class="input input--textarea"
-          type="text"
-          v-model="message"
-          rows="6"
-          placeholder="Your message here"
-        />
-        <button type="submit" class="app-button app-button--md w-full mt-4">Submit</button>
+      <form class="flex flex-col items-center w-full max-w-[500px]" @submit.prevent="sendMessage">
+        <div class="flex flex-col gap-2 w-full">
+          <label for="email" class="w-full mb-1">Email</label>
+          <input
+            v-bind="emailAttrs"
+            id="email"
+            :class="{ 'input--error': errors.email }"
+            name="email"
+            class="input"
+            type="text"
+            v-model="email"
+            placeholder="Your email here"
+          />
+          <small class="h-[16px]">{{ errors.email }}</small>
+        </div>
+        <div class="flex flex-col gap-2 w-full">
+          <label for="message" class="w-full mt-6 mb-1">Message</label>
+          <textarea
+            v-model="message"
+            v-bind="messageAttrs"
+            id="message"
+            name="message"
+            class="input input--textarea"
+            :class="{ 'input--error': errors.message }"
+            type="text"
+            rows="6"
+            placeholder="Your message here"
+          />
+          <small class="h-[16px]">{{ errors.message }}</small>
+        </div>
+
+        <button type="submit" :disabled="!isValid" class="app-button app-button--md w-full mt-4">
+          Submit
+        </button>
       </form>
     </div>
   </div>
@@ -75,6 +116,10 @@ const message = ref('')
   background-color: #ffffff;
   border-radius: 10px;
   transition: all 0.5s;
+
+  &--error {
+    border: 2px solid #ff4d4f;
+  }
 
   &--textarea {
     height: 100px;
