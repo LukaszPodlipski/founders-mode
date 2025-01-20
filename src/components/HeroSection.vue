@@ -8,9 +8,7 @@
         Launch your compliant, safe and secured app in seconds.
       </p>
       <a target="_blank" href="https://github.com/the-momentum/healthstack">
-        <button class="app-button text-header-xs--bold">
-          Check out our Open Source - it’s free
-        </button>
+        <button class="app-button text-header-xs--bold">Check out our Open Source</button>
       </a>
     </div>
   </div>
