@@ -35,6 +35,16 @@ onClickOutside(navbar, (event) => (isNavbarOpen.value = false))
           <button class="text-header-xs">GitHub</button>
         </a>
         <button class="text-header-xs" @click="scrollToSection('contact')">Contact</button>
+        <a
+          class="github-button"
+          href="https://github.com/the-momentum/healthstack"
+          data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+          data-icon="octicon-star"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star the-momentum/healthstack on GitHub"
+          >Star</a
+        >
       </div>
       <button v-else @click="toggleMenu">
         <i class="pi pi-bars text-3xl"></i>

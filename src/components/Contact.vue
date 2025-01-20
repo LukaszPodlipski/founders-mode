@@ -36,7 +36,7 @@ const sendMessage = handleSubmit((values) => {
 <template>
   <div id="contact" class="contact-section flex flex-col gap-24">
     <div class="view-wrapper flex flex-col items-center justify-center gap-8">
-      <h2 class="text-header-xl leading-10 text-center">Need more info about CompliantChatGPT?</h2>
+      <h2 class="text-header-xl leading-10 text-center">Need more info about Healthion?</h2>
       <p class="text-header-s text-center text-grey">
         Leave us your message and we’ll get back to you!
       </p>

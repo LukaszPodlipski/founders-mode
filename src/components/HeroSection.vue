@@ -1,6 +1,6 @@
 <template>
   <div id="hero" class="hero-section">
-    <div class="flex flex-col items-center justify-center gap-8">
+    <div class="flex flex-col items-center justify-center gap-8 mb-16">
       <div class="flex flex-col items-center justify-center">
         <h1 class="text-header-3xl text-gradient text-center">Infrastructure as Code</h1>
       </div>
@@ -19,9 +19,12 @@
 <style scoped lang="scss">
 .hero-section {
   width: 100%;
-  padding: 240px 36px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 41%, rgba(222, 233, 252, 1) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 10%, rgb(198, 219, 254) 100%);
 
   @media screen and (max-width: 460px) {
     padding: 160px 24px;
