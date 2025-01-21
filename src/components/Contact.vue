@@ -25,7 +25,10 @@ const isValid = computed(() => {
   return Object.keys(errors.value).length === 0
 })
 
+const isLoading = ref(false)
+
 const sendMessage = handleSubmit(async (values) => {
+  isLoading.value = true
   fetch(`/.netlify/functions/emails/contact`, {
     headers: {
       'netlify-emails-secret': import.meta.env.VITE_NETLIFY_EMAILS_SECRET,
@@ -39,11 +42,15 @@ const sendMessage = handleSubmit(async (values) => {
         message: values.message,
       },
     }),
-  }).then(() => {
-    email.value = ''
-    message.value = ''
-    resetForm()
   })
+    .then(() => {
+      email.value = ''
+      message.value = ''
+      resetForm()
+    })
+    .finally(() => {
+      isLoading.value = false
+    })
 })
 </script>
 
@@ -87,7 +94,11 @@ const sendMessage = handleSubmit(async (values) => {
           <small class="h-[16px]">{{ errors.message }}</small>
         </div>
 
-        <button type="submit" :disabled="!isValid" class="app-button app-button--md w-full mt-4">
+        <button
+          type="submit"
+          :disabled="!isValid || isLoading"
+          class="app-button app-button--md w-full mt-4"
+        >
           Submit
         </button>
       </form>
