@@ -47,8 +47,7 @@ onClickOutside(navbar, (event) => (isNavbarOpen.value = false))
           data-size="large"
           data-show-count="true"
           aria-label="Star the-momentum/healthstack on GitHub"
-          >Star</a
-        >
+        ></a>
       </div>
       <button v-else @click="toggleMenu">
         <i class="pi pi-bars text-3xl"></i>
