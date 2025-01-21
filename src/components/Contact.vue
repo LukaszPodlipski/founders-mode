@@ -36,7 +36,7 @@ const sendMessage = handleSubmit(async (values) => {
     method: 'POST',
     body: JSON.stringify({
       from: values.email,
-      to: 'lukaszpodlipskikontakt@gmail.com',
+      to: 'healthion@themomentum.ai',
       subject: `New message from ${values.email}`,
       parameters: {
         message: values.message,
