@@ -1,3 +1,27 @@
+<script setup>
+import { ref } from 'vue'
+import VCodeBlock from '@wdns/vue-code-block'
+const code = ref(`module "vpn" {
+  source = "github.com/the-momentum/
+    healthstack.git//aws-vpn/module"
+
+  organization_name   = "Momentum"
+  vpn_domain          = "vpn.myvpn.com"
+  vpc_id              = "vpc-123123"
+  subnet_ids          = [
+    "subnet-123123",
+    "subnet-456456",
+  ]
+
+  client_cidr_block   = "10.100.0.0/22"
+  target_network_cidr = "172.31.0.0/16"
+
+  tags = {
+    Environment = "test"
+  }
+}`)
+</script>
+
 <template>
   <div id="healthStack" class="hero-section flex flex-col gap-36">
     <div class="flex gap-24 justify-between flex-wrap">
@@ -14,12 +38,12 @@
         </p>
       </div>
       <div class="max-w-[576px] column center">
-        <img src="@/assets/images/image1.jpg" class="rounded-3xl w-full h-auto block" />
+        <VCodeBlock :code="code" highlightjs lang="javascript" theme="neon-bunny" />
       </div>
     </div>
     <div class="flex gap-24 justify-between flex-wrap-reverse">
       <div class="max-w-[576px] column center">
-        <img src="@/assets/images/image2.jpg" class="rounded-3xl w-full h-auto block" />
+        <img src="@/assets/images/image1.jpg" class="rounded-3xl w-full h-auto block" />
       </div>
       <div class="flex flex-col items-start justify-center gap-8 max-w-[600px] column center">
         <h2 class="text-header-2xl leading-10 text-left">Why Open Source?</h2>
