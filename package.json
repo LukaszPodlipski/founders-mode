@@ -11,6 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@netlify/emails": "^1.1.0",
+    "@netlify/functions": "^3.0.0",
     "@vueuse/core": "^12.4.0",
     "@wdns/vue-code-block": "^2.3.5",
     "primeicons": "^7.0.0",

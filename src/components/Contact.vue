@@ -25,11 +25,25 @@ const isValid = computed(() => {
   return Object.keys(errors.value).length === 0
 })
 
-const sendMessage = handleSubmit((values) => {
-  alert('Not implemented yet')
-  email.value = ''
-  message.value = ''
-  resetForm()
+const sendMessage = handleSubmit(async (values) => {
+  fetch(`/.netlify/functions/emails/contact`, {
+    headers: {
+      'netlify-emails-secret': import.meta.env.VITE_NETLIFY_EMAILS_SECRET,
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      from: values.email,
+      to: 'lukaszpodlipskikontakt@gmail.com',
+      subject: `New message from ${values.email}`,
+      parameters: {
+        message: values.message,
+      },
+    }),
+  }).then(() => {
+    email.value = ''
+    message.value = ''
+    resetForm()
+  })
 })
 </script>
 
