@@ -65,6 +65,7 @@ onClickOutside(navbar, (event) => (isNavbarOpen.value = false))
 
 <style scoped lang="scss">
 .navbar {
+  z-index: 100;
   width: 100%;
   position: fixed;
   top: 0;
