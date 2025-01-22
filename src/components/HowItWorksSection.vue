@@ -6,13 +6,13 @@
       <div class="card view-wrapper--extedned items-center flex-wrap">
         <div class="flex flex-col gap-12 column">
           <span class="text-header-m--bold"
-            >On a quick setup video you can see why it reduces tedious ClickOps tasks, scales well,
-            and is repeatable.
+            >In a quick setup video, you’ll see how it reduces tedious ClickOps tasks, scales
+            efficiently, and ensures repeatability.
           </span>
           <span class="text-caption-m text-grey-dark"
-            >Just display the S3 module, that creates S3 bucket on AWS with logging, versioning,
-            encryption and private access. Then run a script, automatically you will create all
-            elements of your infrastructure…and voila!
+            >Simply showcase the S3 module, which creates an S3 bucket on AWS with logging,
+            versioning, encryption, and private access. Then, run a script to automatically create
+            all elements of your infrastructure… and voilà!
           </span>
         </div>
         <div class="card__video-container column h-max">

@@ -15,9 +15,9 @@ const isHovered = useElementHover(hoveralbeButton)
         <span class="text-caption-l">Built by Momentum’s Healthcare experts: </span>
         <span class="text-left text-caption-m text-grey-dark"
           >At Momentum, we aim to modernize care delivery with exceptional software. We believe that
-          an open, connected healthcare application ecosystem will drive higher quality care and
-          lower costs both for healthcare providers, clinics and patients. To help make this happen,
-          we provide a comprehensive set of tools and modules that helps to build healthcare
+          an open, connected healthcare application ecosystem will drive higher-quality care and
+          lower costs for healthcare providers, clinics, and patients alike. To help make this
+          happen, we provide a comprehensive set of tools and modules that help build healthcare
           applications in days instead of months.
         </span>
         <a
