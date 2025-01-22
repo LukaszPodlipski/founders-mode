@@ -27,23 +27,44 @@ const isValid = computed(() => {
 
 const isLoading = ref(false)
 
-const sendMessage = handleSubmit(async (values) => {
-  isLoading.value = true
-  fetch(`/.netlify/functions/emails/contact`, {
+const sendEmail = (params) => {
+  return fetch(params.template, {
     headers: {
       'netlify-emails-secret': import.meta.env.VITE_NETLIFY_EMAILS_SECRET,
     },
     method: 'POST',
     body: JSON.stringify({
-      from: values.email,
-      to: 'healthion@themomentum.ai',
-      subject: `New message from ${values.email}`,
-      parameters: {
-        message: values.message,
-      },
+      from: params.emailFrom,
+      to: params.emailTo,
+      subject: params.subject,
+      parameters: params.parameters,
     }),
   })
+}
+
+const submitEmail = handleSubmit(async (values) => {
+  const emailToHealthionParams = {
+    emailFrom: values.email,
+    emailTo: 'healthion@themomentum.ai',
+    subject: `New message from ${values.email}`,
+    template: `/.netlify/functions/emails/contact`,
+    parameters: {
+      message: values.message,
+    },
+  }
+  isLoading.value = true
+  // Send email to Healthion
+  sendEmail(emailToHealthionParams)
     .then(() => {
+      // Send email to user
+      const emailToContactFormUserParams = {
+        emailFrom: 'healthion@themomentum.ai',
+        emailTo: values.email,
+        subject: `Thanks for reaching out to us at Healthstack!`,
+        template: `/.netlify/functions/emails/contact-success`,
+      }
+      sendEmail(emailToContactFormUserParams)
+      // Reset form values and errors
       email.value = ''
       message.value = ''
       resetForm()
@@ -63,7 +84,7 @@ const sendMessage = handleSubmit(async (values) => {
       </p>
     </div>
     <div class="view-wrapper flex flex-col items-center">
-      <form class="flex flex-col items-center w-full max-w-[500px]" @submit.prevent="sendMessage">
+      <form class="flex flex-col items-center w-full max-w-[500px]" @submit.prevent="submitEmail">
         <div class="flex flex-col gap-2 w-full">
           <label for="email" class="w-full mb-1">Email</label>
           <input
