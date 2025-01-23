@@ -59,9 +59,6 @@
     max-width: 600px;
     width: 100%;
     overflow: hidden;
-
-    // min-height: 348px;
-    // height: auto !important;
   }
 }
 </style>
