@@ -17,7 +17,7 @@
         </div>
         <div class="card__video-container column h-max">
           <video controls>
-            <source src="@/assets/videos/howItWorks.mov" type="video/mp4" />
+            <source src="@/assets/videos/howItWorks.mov#t=0.1" type="video/mp4" />
           </video>
         </div>
       </div>
