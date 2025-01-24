@@ -34,7 +34,11 @@
 
 .column {
   flex: 1;
-  min-width: 200px;
+  min-width: 300px;
+
+  @media screen and (max-width: 460px) {
+    min-width: 200px;
+  }
 }
 
 .card {
