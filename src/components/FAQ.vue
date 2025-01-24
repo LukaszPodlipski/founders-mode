@@ -43,7 +43,7 @@ const faqItems = ref([
         :class="{ 'faq-item--border': idx !== faqItems.length - 1 }"
         @click="item.collapsed = !item.collapsed"
       >
-        <div class="flex w-full justify-between">
+        <div class="flex w-full justify-between gap-4">
           <span class="text-caption-m--bold text-left">{{ item.question }}</span>
           <i class="pi text-xs font-bold" :class="[item.collapsed ? 'pi-plus' : 'pi-minus']"></i>
         </div>
