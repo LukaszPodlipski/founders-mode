@@ -1,4 +1,5 @@
 <script setup>
+import useWebWidth from '@/composables/useWebWidth'
 import { ref } from 'vue'
 import VCodeBlock from '@wdns/vue-code-block'
 const code = ref(`module "vpn" {
@@ -20,29 +21,31 @@ const code = ref(`module "vpn" {
     Environment = "test"
   }
 }`)
+
+const { isMobile } = useWebWidth()
 </script>
 
 <template>
   <div id="healthStack" class="hero-section flex flex-col gap-36">
     <div class="flex gap-24 justify-between flex-wrap">
       <div class="flex flex-col items-start justify-center gap-8 max-w-[600px] column center">
-        <h2 class="code-column-text text-header-2xl leading-10 text-left">What is HealthStack?</h2>
-        <p class="code-column-text text-header-m text-left">
+        <h2 class="text-header-2xl leading-10 text-left">What is HealthStack?</h2>
+        <p class="text-header-m text-left">
           While manually provisioning a single server is simple, scaling your application and
           business can lead to repetitive and time-consuming tasks.
         </p>
-        <p class="code-column-text text-header-m--bold-strong text-left">
+        <p class="text-header-m--bold-strong text-left">
           Healthstack was created to make infrastructure provisioning efficient, tested, and
           reliable for your application. Just include the module (we’re open source), input your
           parameters, apply, and you’re ready to build. It’s that simple.
         </p>
       </div>
-      <div class="code-column-block column center">
+      <div v-if="!isMobile" class="code-column-block column center">
         <VCodeBlock :code="code" highlightjs lang="javascript" theme="neon-bunny" />
       </div>
     </div>
     <div class="flex gap-24 justify-between flex-wrap-reverse">
-      <div class="max-w-[576px] center">
+      <div v-if="!isMobile" class="max-w-[576px] center">
         <img src="@/assets/images/image1.jpg" class="rounded-3xl w-full h-auto block" />
       </div>
       <div class="flex flex-col items-start justify-center gap-8 max-w-[600px] column center">
@@ -83,13 +86,6 @@ const code = ref(`module "vpn" {
 
   @media screen and (max-width: 860px) {
     max-width: 90%;
-  }
-}
-
-.code-column-text {
-  // VCodeBlock behaves strangely on small mobile screens
-  @media screen and (max-width: 860px) {
-    padding: 0 20px;
   }
 }
 </style>
