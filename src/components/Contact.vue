@@ -45,7 +45,7 @@ const sendEmail = (params) => {
 const submitEmail = handleSubmit(async (values) => {
   const emailToHealthionParams = {
     emailFrom: values.email,
-    emailTo: 'healthion@themomentum.ai',
+    emailTo: 'no-reply@themomentum.com',
     subject: `New message from ${values.email}`,
     template: `/.netlify/functions/emails/contact`,
     parameters: {
